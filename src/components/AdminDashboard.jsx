@@ -137,39 +137,39 @@ setEdit(item.prod_id);
         <div>
             <div className='flex gap-10 max-w-6xl mx-auto py-6'>
                   <div className='flex flex-col items-center cursor-pointer'>
-                    <FaBorderAll  onClick={fetchAllProducts} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
+                    <FaBorderAll  onClick={fetchAllProducts} className='hover:bg-sky-500 hover:text-white hover:rounded-full rounded-full text-6xl p-4 shadow-xl/50'/>
                     <span className='py-2'>All</span>
                   </div>
           
                   <div className='flex flex-col items-center cursor-pointer'>
-                    <FaMobileAlt onClick={()=>{fetchByCategory("Mobiles")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
+                    <FaMobileAlt onClick={()=>{fetchByCategory("Mobiles")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/50'/>
                     <span className='py-2'>Mobiles</span>
                   </div>
           
                    <div className='flex flex-col items-center cursor-pointer'>
-                    <FaLaptop onClick={()=>{fetchByCategory("Laptop")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
+                    <FaLaptop onClick={()=>{fetchByCategory("Laptop")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/50'/>
                     <span className='py-2'>Loptop</span>
                   </div>
           
                    <div className='flex flex-col items-center cursor-pointer'>
-                    <CgLaptop onClick={()=>{fetchByCategory("Appliances")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
+                    <CgLaptop onClick={()=>{fetchByCategory("Appliances")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/50'/>
                     <span className='py-2'>Appliances</span>
                   </div>
           
                   <div className='flex flex-col items-center cursor-pointer'>
-                    <IoTime onClick={()=>{fetchByCategory("Watches")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
+                    <IoTime onClick={()=>{fetchByCategory("Watches")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/50'/>
                     <span className='py-2'>Watch</span>
                   </div>
           
                   <div className='flex flex-col items-center cursor-pointer'>
-                    <FaHeadphones onClick={()=>{fetchByCategory("Headphones")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
+                    <FaHeadphones onClick={()=>{fetchByCategory("Headphones")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/50'/>
                     <span className='py-2'>Headphones</span>
                   </div>
               </div>
 
                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-10 py-6'>
           {Products.map((item,index)=>(
-        <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-full">
+        <div class="relative flex flex-col text-gray-700 bg-white shadow-xl/30 bg-clip-border rounded-xl w-full h-full justify-between">
             <div key={item.prod_id} class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-65">
                 <img
                     src={item.image}
@@ -186,18 +186,18 @@ setEdit(item.prod_id);
                     </p>
             </div>
             <div class="p-6 pt-0 flex justify-center gap-24">
-                <button onClick={()=>handleEdit(item)} className='border text-bold text-white bg-blue-500 p-2 cursor-pointer rounded w-full shadow-xl/30'>Edit</button>
-                <button onClick={() => deleteProduct(item.prod_id)} className='cursor-pointer border p-2 rounded bg-red-500 w-full text-white shadow-xl/30'>Delete</button>
+                <button onClick={()=>handleEdit(item)} className=' text-bold text-white bg-blue-500 p-2 cursor-pointer rounded w-full shadow-xl/30'>Edit</button>
+                <button onClick={() => deleteProduct(item.prod_id)} className='cursor-pointer p-2 rounded bg-red-500 w-full text-white shadow-xl/30'>Delete</button>
             </div>
         </div>))}
         </div>
-  <div className="flex justify-center items-center gap-2 pb-10">
+  <div className="flex justify-center items-center gap-2 pb-10 ">
 
   {/* Prev */}
   <button
     onClick={() => setCurrentPage(prev => prev - 1)}
     disabled={currentPage === 1}
-    className="px-3 py-1 border rounded disabled:opacity-50"
+    className="px-3 py-1 rounded disabled:opacity-50 shadow-xl/30"
   >
     Prev
   </button>
@@ -207,7 +207,7 @@ setEdit(item.prod_id);
     <button
       key={i}
       onClick={() => setCurrentPage(i + 1)}
-      className={`px-3 py-1 rounded border 
+      className={`px-3 py-1 rounded  shadow-xl/30
         ${currentPage === i + 1 ? "bg-blue-500 text-white" : "bg-white"}
       `}
     >
@@ -219,7 +219,7 @@ setEdit(item.prod_id);
   <button
     onClick={() => setCurrentPage(prev => prev + 1)}
     disabled={currentPage === totalPages}
-    className="px-3 py-1 border rounded disabled:opacity-50"
+    className="px-3 py-1 rounded disabled:opacity-50 shadow-xl/30"
   >
     Next
   </button>
