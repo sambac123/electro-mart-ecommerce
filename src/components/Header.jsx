@@ -56,7 +56,7 @@ export default function Header({darkMode, setDarkMode}) {
         <div className="mx-2 flex flex-wrap items-center justify-between">
 
           {/* Logo */}
-          <span className="self-center font-bold text-2xl">
+          <span className="self-center font-extrabold text-3xl tracking-wide drop-shadow-lg">
             ElectroMart
           </span>
 
