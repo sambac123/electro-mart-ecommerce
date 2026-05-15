@@ -61,29 +61,36 @@ export default function Header({darkMode, setDarkMode}) {
           </span>
 
           {/* Menu */}
-          <ul className="flex items-center gap-6">
+         <ul className="flex items-center gap-8">
 
-            {/* Dark Mode */}
-            <li className="cursor-pointer">
-              <MdOutlineDarkMode className='text-2xl cursor-pointer'   onClick={()=>setDarkMode(!darkMode)} />
-            </li>
+  {/* Dark Mode */}
+  <li className="flex flex-col items-center cursor-pointer hover:scale-110 transition">
+    <MdOutlineDarkMode 
+      className='text-2xl'  
+      onClick={()=>setDarkMode(!darkMode)} 
+    />
+    <span className="text-sm mt-1">Mode</span>
+  </li>
 
-            {/* Profile */}
-            <li className="flex items-center gap-1 cursor-pointer" onClick={()=>setShowProfile(true)}>
-              <CgProfile className='text-2xl' />
-              Profile
-            </li>
+  {/* Profile */}
+  <li 
+    className="flex flex-col items-center cursor-pointer hover:scale-110 transition"
+    onClick={()=>setShowProfile(true)}
+  >
+    <CgProfile className='text-2xl' />
+    <span className="text-sm mt-1">Profile</span>
+  </li>
 
-            {/* Logout */}
-            <li 
-              onClick={logout}
-              className="flex items-center gap-1 cursor-pointer"
-            >
-              <MdLogout className='text-2xl' />
-              Logout
-            </li>
+  {/* Logout */}
+  <li 
+    onClick={logout}
+    className="flex flex-col items-center cursor-pointer hover:scale-110 transition"
+  >
+    <MdLogout className='text-2xl' />
+    <span className="text-sm mt-1">Logout</span>
+  </li>
 
-          </ul>
+</ul>
 
         </div>
       </div>

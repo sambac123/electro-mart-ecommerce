@@ -9,6 +9,7 @@ import API from '../api/API';
 export default function AdminDashboard() {
   const [category,setCategory]=useState("");
   const [image,setImage]=useState(null);
+  
   const handleImage = (e)=>{
     const file = e.target.files[0];
     if(!file) return;
@@ -25,6 +26,7 @@ export default function AdminDashboard() {
   const [description, setDescription] = useState("")
   const [currentPage,setCurrentPage] = useState(1)
   const [edit,setEdit]=useState(null);
+  
   const fetchAllProducts = async () =>{
   const resp = await API.get("")
   setProducts(resp.data)
@@ -111,6 +113,23 @@ setEdit(item.prod_id);
   setImage(item.image);
 };
 
+ const [visiable,setVisiable]=useState({})
+
+   useEffect (()=>{
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+          setVisiable((prev) => ({
+            ...prev,[entry.target.dataset.id]:true
+          }))
+        }
+      })
+    },{threshold:0.2})
+    const elements = document.querySelectorAll(".animate-card")
+    elements.forEach((e1)=>observer.observe(e1))
+    return () =>observer.disconnect()
+  },[Products])
+
   return (
     <>
     <div className='max-w-6xl max-auto bg-white p-12 rounded shadow-xl'>
@@ -169,7 +188,10 @@ setEdit(item.prod_id);
 
                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-10 py-6'>
           {Products.map((item,index)=>(
-        <div class="relative flex flex-col text-gray-700 bg-white shadow-xl/30 bg-clip-border rounded-xl w-full h-full justify-between">
+        <div   data-id={item.prod_id}
+  className={`animate-card relative flex flex-col text-gray-700 bg-white shadow-xl/30 rounded-xl w-full h-full justify-between transition-all duration-700 
+  ${visiable[item.prod_id] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
+  `}>
             <div key={item.prod_id} class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-65">
                 <img
                     src={item.image}
