@@ -132,7 +132,7 @@ setEdit(item.prod_id);
 
   return (
     <>
-    <div className='min-h-screen bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100'>
+    
     <div className='max-w-6xl max-auto bg-white p-12 rounded shadow-xl'>
       <h2 className='text-xl font-bold mb-4'>Add product</h2>
       <div className='grid grid-cols-2 gap-4'>
@@ -157,32 +157,32 @@ setEdit(item.prod_id);
         <div>
             <div className='flex gap-10 max-w-6xl mx-auto py-6'>
                   <div className='flex flex-col items-center cursor-pointer'>
-                    <FaBorderAll  onClick={fetchAllProducts} className='hover:bg-sky-500 hover:text-white hover:rounded-full rounded-full text-6xl p-4 shadow-xl/50  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500'/>
+                    <FaBorderAll  onClick={fetchAllProducts} className='hover:bg-sky-500 hover:text-white hover:rounded-full rounded-full text-6xl p-4 shadow-xl/60  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500'/>
                     <span className='py-2'>All</span>
                   </div>
           
                   <div className='flex flex-col items-center cursor-pointer'>
-                    <FaMobileAlt onClick={()=>{fetchByCategory("Mobiles")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/50  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500'/>
+                    <FaMobileAlt onClick={()=>{fetchByCategory("Mobiles")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/60  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500'/>
                     <span className='py-2'>Mobiles</span>
                   </div>
           
                    <div className='flex flex-col items-center cursor-pointer'>
-                    <FaLaptop onClick={()=>{fetchByCategory("Laptop")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/50  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500'/>
+                    <FaLaptop onClick={()=>{fetchByCategory("Laptop")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/60  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500'/>
                     <span className='py-2'>Loptop</span>
                   </div>
           
                    <div className='flex flex-col items-center cursor-pointer'>
-                    <CgLaptop onClick={()=>{fetchByCategory("Appliances")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/50  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500'/>
+                    <CgLaptop onClick={()=>{fetchByCategory("Appliances")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/60  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500'/>
                     <span className='py-2'>Appliances</span>
                   </div>
           
                   <div className='flex flex-col items-center cursor-pointer'>
-                    <IoTime onClick={()=>{fetchByCategory("Watches")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/50  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500'/>
+                    <IoTime onClick={()=>{fetchByCategory("Watches")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/60 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500'/>
                     <span className='py-2'>Watch</span>
                   </div>
           
                   <div className='flex flex-col items-center cursor-pointer'>
-                    <FaHeadphones onClick={()=>{fetchByCategory("Headphones")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/50  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500'/>
+                    <FaHeadphones onClick={()=>{fetchByCategory("Headphones")}} className='hover:bg-sky-500 hover:text-white hover:rounded-full  rounded-full text-6xl p-4 shadow-xl/60  transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500'/>
                     <span className='py-2'>Headphones</span>
                   </div>
               </div>
@@ -246,7 +246,6 @@ setEdit(item.prod_id);
   >
     Next
   </button>
-</div>
 </div>
 </div>
     </>
