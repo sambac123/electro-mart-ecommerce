@@ -29,60 +29,64 @@ export default function UserDashboard() {
   
   return (
     <>
-    <div className='bg-slate-100 px-10'>
+    <div className=''>
     <div className='flex gap-10 max-w-6xl mx-auto'>
         <div className='flex flex-col items-center cursor-pointer'>
-          <FaBorderAll  onClick={()=>{setSelectCategory("All"),  setCurrentPage(1)}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
+          <FaBorderAll  onClick={()=>{setSelectCategory("All");setCurrentPage(1)}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
           <span className='py-2'>All</span>
         </div>
 
         <div className='flex flex-col items-center cursor-pointer'>
-          <FaMobileAlt onClick={()=>{setSelectCategory("Mobiles"), setCurrentPage(1)}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
+          <FaMobileAlt onClick={()=>{setSelectCategory("Mobiles"); setCurrentPage(1)}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
           <span className='py-2'>Mobiles</span>
         </div>
 
          <div className='flex flex-col items-center cursor-pointer'>
-          <FaLaptop onClick={()=>{setSelectCategory("Laptop"), setCurrentPage(1)}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
+          <FaLaptop onClick={()=>{setSelectCategory("Laptop"); setCurrentPage(1)}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
           <span className='py-2'>Loptop</span>
         </div>
 
          <div className='flex flex-col items-center cursor-pointer'>
-          <CgLaptop onClick={()=>{setSelectCategory("Appliances"), setCurrentPage(1)}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
+          <CgLaptop onClick={()=>{setSelectCategory("Appliances");setCurrentPage(1)}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
           <span className='py-2'>Appliances</span>
         </div>
 
         <div className='flex flex-col items-center cursor-pointer'>
-          <IoTime onClick={()=>{setSelectCategory("Watches"), setCurrentPage(1)}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
+          <IoTime onClick={()=>{setSelectCategory("Watches"); setCurrentPage(1)}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
           <span className='py-2'>Watch</span>
         </div>
 
         <div className='flex flex-col items-center cursor-pointer'>
-          <FaHeadphones onClick={()=>{setSelectCategory("Headphones"), setCurrentPage(1)}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
+          <FaHeadphones onClick={()=>{setSelectCategory("Headphones"); setCurrentPage(1)}} className='hover:bg-sky-500 hover:text-white hover:rounded-full border rounded-full text-6xl p-4'/>
           <span className='py-2'>Headphones</span>
         </div>
     </div>
-     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-10 py-6'>
+     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 pb-10 py-6 '>
           {paginatedProduct.map((item,index)=>(
-        <div class="relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-full">
-            <div key={item.prod_id} class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white bg-clip-border rounded-xl h-65">
+        <div class="relative flex flex-col hover:shadow-xl/30  rounded-xl h-full w-64">
+            <div key={item.prod_id} class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-clip-border rounded-xl h-64">
                 <img
                     src={item.image}
                     alt="card-image" class=" w-full h-full transition-transform duration-300 ease-in-out hover:scale-110" />
             </div>
-            <div class="p-6">
+            <div class="p-6 flex-grow">
                 <div class="flex items-center justify-between mb-2">
                     <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
                         {item.prod_name}
                     </p>
-                    <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
-                       ₹ {item.prod_price}
-                    </p>
                 </div>
+               
                 <p class="block font-sans text-sm antialiased font-normal leading-normal text-gray-700 opacity-75">
                     {item.prod_description}
                 </p>
+                 <div>
+                   <p class="block font-sans text-base antialiased font-medium leading-relaxed text-blue-gray-900">
+                       ₹ {item.prod_price}
+                    </p>
+                </div>
             </div>
-            <div class="p-6 pt-0">
+            
+            <div class="p-6 pt-0 mt-auto">
                 <button
                     class="w-full bg-green-500 hover:bg-blue-500 hover:text-white text-white py-2 rounded transition"
                     type="button">
